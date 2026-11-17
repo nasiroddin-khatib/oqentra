@@ -1,0 +1,9 @@
+{
+  "name": "oqentra-public-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OQENTRA public-facing business website",
+  "scripts": {
+    "start": "python -m http.server 5500"
+  }
+}
