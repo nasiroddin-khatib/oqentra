@@ -1,0 +1,24 @@
+[Unit]
+Description=OQENTRA Express API
+After=network.target
+
+[Service]
+Type=simple
+User=oqentra
+Group=oqentra
+WorkingDirectory=/opt/oqentra/backend
+Environment=NODE_ENV=production
+EnvironmentFile=/opt/oqentra/backend/.env
+ExecStart=/usr/bin/node /opt/oqentra/backend/src/server.js
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/oqentra/backend/logs
+
+[Install]
+WantedBy=multi-user.target
